@@ -7,7 +7,7 @@ function team(teamName) {
 
 
   function addMember(member) {
-    if (teamMembers.indexOf(member) >= 0) {
+    if (hasMember(member)) {
       return false;
     } else {
       teamMembers.push(member);
@@ -43,12 +43,7 @@ function team(teamName) {
   }
 
   function hasMember(member) {
-    for (var i = 0; i < teamMembers.length; i++) {
-      if (teamMembers[i] === member) {
-        return true;
-      }
-    }
-    return false;
+    return teamMembers.indexOf(member) >= 0;
   }
 
   return {

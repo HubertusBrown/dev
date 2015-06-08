@@ -81,7 +81,7 @@ angular.module('devApp')
 
         function assignProject(project, team) {
             if (getTeamForProject(project)) {
-                this.unassignProject(project, teams);
+                unassignProject(project, teams);
             }
             team.setProject(project);
             project.setAssigned(true);
