@@ -12,6 +12,10 @@ module.exports = function (config) {
         frameworks: ['mocha', 'chai-sinon'],
 
 
+	htmlReporter: {
+	outputFile: '/var/www/html/units.html'
+	},	
+
         // list of files / patterns to load in the browser
         files: [
             'client/bower_components/jquery/dist/jquery.js',
