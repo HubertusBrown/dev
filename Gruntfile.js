@@ -6,6 +6,20 @@ module.exports = function (grunt) {
 
 
     grunt.initConfig({
+
+        karma: {
+            dev: {
+                configFile: 'karma.conf.js',
+                browsers: ['Chrome'],
+                singleRun: false
+            },
+            ci: {
+                configFile: 'karma.conf.js',
+                browsers: ['PhantomJS'],
+                autoWatch: false
+            }
+        },
+
         express: {
             dev: {
                 options: {
@@ -42,6 +56,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-express-server');
     grunt.loadNpmTasks('grunt-open');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-karma');
 
     grunt.registerTask('start', "Starts server and client", ['express:dev', 'open:dev', 'watch:client']);
     grunt.registerTask('server', "Starts server", ['express:dev', 'keepAlive']);
