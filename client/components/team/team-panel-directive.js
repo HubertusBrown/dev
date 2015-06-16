@@ -23,6 +23,7 @@ angular.module('devApp')
                 $scope.newTeamName = '';
             } catch (err) {
                 alert(err.message);
+
             }
         };
 

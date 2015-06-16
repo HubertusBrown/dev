@@ -12,9 +12,9 @@ module.exports = function (config) {
         frameworks: ['mocha', 'chai-sinon'],
 
 
-	htmlReporter: {
-	outputFile: '/var/www/html/units.html'
-	},	
+        htmlReporter: {
+            outputFile: '/var/www/html/units.html'
+        },
 
         // list of files / patterns to load in the browser
         files: [
@@ -24,17 +24,25 @@ module.exports = function (config) {
             'client/bower_components/angular-mocks/angular-mocks.js',
             'client/app.js',
             'client/components/**/*.js',
-            'client/components/**/*.Spec.js'
+            'client/views/**/*.html',
+            'client/components/**/*.html'
+
         ],
+
+
+        preprocessors: {
+            '**/*.html': ['ng-html2js']
+
+        },
+
+        ngHtml2JsPreprocessor: {
+            stripPrefix: 'client/',
+            moduleName: 'templates'
+        },
 
 
         // list of files to exclude
         exclude: [],
-
-
-        // preprocess matching files before serving them to the browser
-        // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-        preprocessors: {},
 
 
         // test results reporter to use
