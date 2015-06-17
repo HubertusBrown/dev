@@ -28,7 +28,7 @@ describe('team panel directive test suite', function () {
 
     it('should', inject(function (teamService) {
         var teams = [team('A Team')];
-        var getTeamsStub = sinon.stub(teamService, 'getTeams').returns(teams);
+        sinon.stub(teamService, 'getTeams').returns(teams);
         scope.$digest();
         var teamzz = teamPanelDirective.find("team-display");
         console.log(teamzz[0]);
