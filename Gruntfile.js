@@ -30,7 +30,7 @@ module.exports = function (grunt) {
         },
 
         clean: {
-            outputFolder: ['output/']
+            outputFolder: ['output/coverage','output/']
         },
 
         open: {
