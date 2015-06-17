@@ -13,7 +13,7 @@ module.exports = function (config) {
 
 
         htmlReporter: {
-            outputFile: '/var/www/html/units.html'
+            outputFile: 'output/units.html'
         },
 
         // list of files / patterns to load in the browser
