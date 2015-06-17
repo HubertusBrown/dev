@@ -34,8 +34,5 @@ describe('team panel directive test suite', function () {
         //console.log(teamzz[0]);
     }));
 
-    it('should fail', function () {
-        expect(true).to.be.false;
-    })
 
 });
