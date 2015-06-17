@@ -31,7 +31,11 @@ describe('team panel directive test suite', function () {
         sinon.stub(teamService, 'getTeams').returns(teams);
         scope.$digest();
         var teamzz = teamPanelDirective.find("team-display");
-        console.log(teamzz[0]);
+        //console.log(teamzz[0]);
     }));
+
+    it('should fail', function () {
+        expect(true).to.be.false;
+    })
 
 });
