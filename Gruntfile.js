@@ -29,6 +29,10 @@ module.exports = function (grunt) {
             }
         },
 
+        clean: {
+            outputFolder: ['output/']
+        },
+
         open: {
             dev: {
                 url: 'http://localhost:' + port
@@ -57,8 +61,10 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-express-server');
     grunt.loadNpmTasks('grunt-open');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-karma');
 
+    grunt.registerTask('jenkins', 'Runs tests for CI', ['clean:outputFolder', 'karma:ci']);
     grunt.registerTask('start', "Starts server and client", ['express:dev', 'open:dev', 'watch:client']);
     grunt.registerTask('server', "Starts server", ['express:dev', 'keepAlive']);
 
