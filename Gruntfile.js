@@ -16,7 +16,7 @@ module.exports = function (grunt) {
             ci: {
                 configFile: 'karma.conf.js',
                 browsers: ['PhantomJS'],
-                reporters: ['html', 'coverage'],
+                reporters: ['progress','html', 'coverage'],
                 autoWatch: false
             }
         },

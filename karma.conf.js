@@ -12,9 +12,6 @@ module.exports = function (config) {
         frameworks: ['mocha', 'chai-sinon'],
 
 
-        htmlReporter: {
-            outputFile: 'output/units.html'
-        },
 
         // list of files / patterns to load in the browser
         files: [
@@ -26,7 +23,6 @@ module.exports = function (config) {
             'client/components/**/*.js',
             'client/views/**/*.html',
             'client/components/**/*.html'
-
         ],
 
 
@@ -47,6 +43,10 @@ module.exports = function (config) {
             ]
         },
 
+
+        htmlReporter: {
+            outputFile: 'output/units.html'
+        },
 
         // list of files to exclude
         exclude: [],
