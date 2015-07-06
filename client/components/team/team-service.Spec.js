@@ -2,6 +2,8 @@
 
 describe('teamService test suite', function () {
 
+    var teamName = 'Tiger';
+
     beforeEach(function () {
         module('devApp');
     });
@@ -17,19 +19,19 @@ describe('teamService test suite', function () {
     }));
 
     it('should create team and add it to teams array', inject(function (teamService) {
-        teamService.createTeam('TIGER');
+        teamService.createTeam(teamName);
         expect(teamService.getTeams().length).to.be.equal(1);
         expect(teamService.getTeam("TIGER")).to.be.defined;
     }));
 
-    it('should have empty teams array', inject(function (teamService) {
-        expect(teamService.getTeams()).to.be.empty;
-    }));
-
-
     it('should not be able to add team with same name', inject(function (teamService) {
-        teamService.createTeam('TIGER');
-        //teamService.createTeam('TIGER');
+        teamService.createTeam(teamName);
+        // the tested function is wrapped into another one (because we dont want to call the tested function)
+        // http://stackoverflow.com/questions/14966821/testing-for-errors-thrown-in-mocha
+        // http://chaijs.com/api/bdd/ (.throw section)
+        expect(function () {
+            teamService.createTeam(teamName)
+        }).to.throw('Team with name ' + teamName + ' already created.');
 
 
     }));

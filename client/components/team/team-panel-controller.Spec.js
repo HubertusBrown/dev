@@ -43,7 +43,7 @@ describe('team panel directive test suite', function () {
         var errorMessage = 'Team already created';
         createTeamSpy.restore();
 
-        //creating stub instead of spy
+        //creating stub instead of spy - name has not been changed to show the effects of restore()
         createTeamSpy = sinon.stub(teamService, 'createTeam').throws(new Error(errorMessage));
         scope.createTeam('A');
         expect(createTeamSpy).to.have.been.called;
